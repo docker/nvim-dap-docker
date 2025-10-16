@@ -18,7 +18,7 @@ Please refer to the [official documentation][2] for more information. Please rep
 
 - Neovim >= 0.11.0
 - [nvim-dap][1]
-- [docker buildx][4] >= 0.26.0 (estimated release date: July 21, 2025)
+- [docker buildx][4] >= 0.29.0
 
 ## Installation
 
