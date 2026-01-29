@@ -37,6 +37,7 @@ local function setup_dockerfile_adapter(dap, config)
 
 		local envmap = vim.tbl_extend("force", vim.fn.environ(), {
 			BUILDX_EXPERIMENTAL = "1",
+			BUILDX_DAP_USER_AGENT = "nvim/dap-docker",
 		})
 
 		local args = {}
