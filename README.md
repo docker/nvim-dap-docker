@@ -62,6 +62,10 @@ lua require('dap-docker').setup {
     -- the path to the executable docker which will be used for debugging.
     -- by default, this is the "docker" executable on your PATH.
     path = "docker",
+    -- builder sets the default builder to be used. If set to nil, it will
+    -- default to the default builder from the docker context.
+    -- Overridden by a configuration-specific `builder` in the launch configuration.
+    builder = nil,
     -- standalone should be set to true if the buildx is being invoked
     -- directly instead of as a plugin. defaults to false.
     -- mostly used for development.
