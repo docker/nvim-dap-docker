@@ -3,6 +3,7 @@ local M = {}
 local default_config = {
 	docker = {
 		path = "docker",
+		builder = nil,
 		standalone = false,
 	},
 }
@@ -44,8 +45,10 @@ local function setup_dockerfile_adapter(dap, config)
 		if not config.docker.standalone then
 			vim.list_extend(args, { "buildx" })
 		end
-		if client_config.builder then
-			vim.list_extend(args, { "--builder", client_config.builder })
+
+		local builder = client_config.builder or config.docker.builder
+		if builder then
+			vim.list_extend(args, { "--builder", builder })
 		end
 		vim.list_extend(args, { "dap", "build" })
 		if client_config.args then
